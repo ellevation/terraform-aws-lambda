@@ -14,8 +14,8 @@ resource "aws_lambda_function" "lambda" {
 
   # Use a generated filename to determine when the source code has changed.
 
-  filename   = resource.local_file.deployment_package_with_hash.filename
-  depends_on = [resource.local_file.deployment_package_with_hash]
+  filename   = local_file.deployment_package_with_hash.filename
+  depends_on = [local_file.deployment_package_with_hash]
 
   # Add dynamic blocks based on variables.
 
